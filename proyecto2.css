@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f4faff;
+}
+
+.encabezado {
+  background-color: #0099ff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 50px;
+}
+
+.menu-button {
+  background-color: #ffffff;
+  color: #0099ff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;margin-right: 100px;
+  max-width: 150px;
+  overflow: hidden;
+
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  left:0 ;
+  top: 40px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+.menu-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.menu:hover .menu-content {
+  display: block;
+}
+
+.imagen-principal {
+  position: relative;
+  margin-top: 60px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imagen-principal img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+button.learn-more {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  z-index: 2;
+  width: 12rem;
+  height: auto;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+  position: relative;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  content: "";
+  position: absolute;
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin-left: 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: #fff;
+}
+
+.redes {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+}
+
+.redes .icono i {
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.redes .icono i:hover {
+  background-color: #0099ff;
+}
+
+@media (max-width: 480px) {
+  .encabezado {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .menu-button {
+    width: 100%;
+  }
+
+  .menu-content {
+    left: 0;
+    right: 0;
+  }
+
+  .learn-more {
+    bottom: 15px;
+    right: 15px;
+    width: 10rem;
+  }
+
+  .redes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
