@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>crepa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="crepas.css">
+
+</head>
+<body>
+<h2 class="titulo">linea deluxe cream</h2>
+<div class="crepa-seleccionado" id="maincrepa-deluxe"></div>
+<div class="carrusel">
+  <div class="slides" id="slides-deluxe">
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-deluxe','Caprichosa', 'crepa hecha con base de lechera, rodajas de fresa, plátano y helado de chocolate con kisses')">
+      <div class="img-container"><img src="Caprichosa.webp" alt="crepa"></div>
+      <h3>Caprichosa</h3>
+      <p class="precio">$55</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-deluxe','Chabela', ' crepa que tiene como base la Lechera y una capa de ricas porciones de fresa, se acompaña con chocolates mini y cremoso helado de fresa. Todo cubierto con rica Lechera.')">
+      <div class="img-container"><img src="Chabela.webp" alt="crepa"></div>
+      <h3>Chabela</h3>
+      <p class="precio">$55</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-deluxe','Consentida', 'Deliciosa crepa con base de Nutella acompañada de fresas y cremoso helado de vainilla que se cubre con Lechera')">
+      <div class="img-container"><img src="Consentida-480x446.webp" alt="crepa"></div>
+      <h3>Consentida</h3>
+      <p class="precio">$49</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-deluxe','Paraiso', 'Crepa deleitable con base de Lechera que se acompaña con suaves rodajas de plátano, cremoso helado de chocolate y se cubre con chocolate Hershey’s líquido')">
+      <div class="img-container"><img src="Paraiso-480x446.webp" alt="crepa"></div>
+      <h3>Paraiso</h3>
+      <p class="precio">$49</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-deluxe','Callaita', 'con base de Nutella y cremoso helado de fresa que se baña con chocolates M&M’s mini y chocolate Hershey’s líquido')">
+      <div class="img-container"><img src="Callaita.webp" alt="crepa"></div>
+      <h3>Callaita</h3>
+      <p class="precio">$49</p>
+    </div>
+  </div>
+</div>
+<div class="flechas">
+  <button onclick="moverSlide('deluxe', -1)">⟨</button>
+  <button onclick="moverSlide('deluxe', 1)">⟩</button>
+</div>
+<div class="puntos" id="puntos-deluxe">
+  <span class="punto activo" onclick="irASlide('deluxe', 0)"></span>
+  <span class="punto" onclick="irASlide('deluxe', 1)"></span>
+  <span class="punto" onclick="irASlide('deluxe', 2)"></span>
+  <span class="punto" onclick="irASlide('deluxe', 3)"></span>
+  <span class="punto" onclick="irASlide('deluxe', 4)"></span>
+
+</div>
+
+<h2 class="titulo">linea prime</h2>
+<div class="crepa-seleccionado" id="maincrepa-prime"></div>
+<div class="carrusel">
+  <div class="slides" id="slides-prime">
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-prime','La Paty', 'Crepa con muy rico sabor que lleva como base Lechera y una capa de ricas rodajas de plátano acompañadas con trocitos de Snickers cubiertos por chocolate Hershey’s líquido')">
+      <div class="img-container"><img src="La-Paty-480x446.webp" alt="crepa"></div>
+      <h3>La Paty</h3>
+      <p class="precio">$45</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-prime','La Lupe', 'Deliciosa crepa que lleva base la Lechera y una capa de suaves rodajas de plátano acompañadas de Kisses. Todo cubierto con chocolate Hershey’s líquido')">
+      <div class="img-container"><img src="La-Lupe-Lechera-480x446.webp" alt="crepa"></div>
+      <h3>La Lupe</h3>
+      <p class="precio">$45</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-prime','Dorita', 'Crepa con un sabor paradisiaco que lleva como base la Lechera y una capa de jugoso durazno con crujientes trocitos de galletas marías que se cubren con deliciosa Lechera')">
+      <div class="img-container"><img src="Dorita-480x446.webp" alt="crepa"></div>
+      <h3>Dorita</h3>
+      <p class="precio">$45</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-prime','Teresita', 'Clásica e irreemplazable. Teresita es una crepa que lleva como base Nutella acompañada de suaves pedacitos de plátano cubiertos con chocolate Hershey’s líquido')">
+      <div class="img-container"><img src="Teresita-480x446.webp" alt="crepa"></div>
+      <h3>Teresita</h3>
+      <p class="precio">$45</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-prime','Tia Lola', 'Sencillita y deleitable. Nuestra crepa Tía Lola tiene como base Nutella y una capa de ricas rodajas de fresa bañadas en Lechera')">
+      <div class="img-container"><img src="Tia-Lola-480x446.webp" alt="crepa"></div>
+      <h3>Tia Lola</h3>
+      <p class="precio">$45</p>
+    </div>
+  </div>
+</div>
+<div class="flechas">
+  <button onclick="moverSlide('prime', -1)">⟨</button>
+  <button onclick="moverSlide('prime', 1)">⟩</button>
+</div>
+<div class="puntos" id="puntos-prime">
+  <span class="punto activo" onclick="irASlide('prime', 0)"></span>
+  <span class="punto" onclick="irASlide('prime', 1)"></span>
+  <span class="punto" onclick="irASlide('prime', 2)"></span>
+  <span class="punto" onclick="irASlide('prime', 3)"></span>
+  <span class="punto" onclick="irASlide('prime', 4)"></span>
+ 
+</div>
+
+<!-- Línea Salty -->
+<h2 class="titulo">linea salty</h2>
+<div class="crepa-seleccionado" id="maincrepa-salty"></div>
+<div class="carrusel">
+  <div class="slides" id="slides-salty">
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-salty','La Italiana', 'Rica crepa salada que lleva base de salsa de tomate acompañada de ricos pepperonis y queso manchego')">
+      <div class="img-container"><img src="Italiana-480x446.webp" alt="crepa"></div>
+      <h3>La Italiana</h3>
+      <p class="precio">$43</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-salty','La Champy', 'Deliciosa crepa salada que tiene salsa de tomate como base y se acompaña con antojable queso manchego y champiñones')">
+      <div class="img-container"><img src="La-Champy-480x446.webp" alt="crepa"></div>
+      <h3>La Champy</h3>
+      <p class="precio">$43</p>
+    </div>
+    <div class="crepa" onclick="mostrarcrepa('maincrepa-salty','La Hawii', 'Un estilo hawaiano que se mantiene en nuestra crepa salada que tiene salsa de tomate como base y se acompaña con queso manchego, jamón y piña')">
+      <div class="img-container"><img src="La-Hawii-480x446.webp" alt="crepa"></div>
+      <h3>La Hawii</h3>
+      <p class="precio">$43</p>
+    </div>
+  </div>
+</div>
+<div class="flechas">
+  <button onclick="moverSlide('salty', -1)">⟨</button>
+  <button onclick="moverSlide('salty', 1)">⟩</button>
+</div>
+<div class="puntos" id="puntos-salty">
+  <span class="punto activo" onclick="irASlide('salty', 0)"></span>
+  <span class="punto" onclick="irASlide('salty', 1)"></span>
+    <span class="punto" onclick="irASlide('salty', 2)"></span>
+
+</div>
+
+<script>
+  let estados = {
+    deluxe: 0,
+    prime: 0,
+    salty: 0
+  };
+
+  function actualizarSlide(nombre) {
+    const slide = document.getElementById('slides-' + nombre);
+    const puntos = document.querySelectorAll('#puntos-' + nombre + ' .punto');
+    slide.style.transform = 'translateX(' + (-estados[nombre] * 100) + '%)';
+    puntos.forEach(p => p.classList.remove('activo'));
+    if (puntos[estados[nombre]]) puntos[estados[nombre]].classList.add('activo');
+  }
+
+  function moverSlide(nombre, paso) {
+    const total = document.querySelectorAll('#puntos-' + nombre + ' .punto').length;
+    estados[nombre] = (estados[nombre] + paso + total) % total;
+    actualizarSlide(nombre);
+  }
+
+  function irASlide(nombre, index) {
+    estados[nombre] = index;
+    actualizarSlide(nombre);
+  }
+
+  function mostrarcrepa(id, nombre, descripcion) {
+    const main = document.getElementById(id);
+    main.innerHTML = `
+      <h3>${nombre}</h3>
+      <p>${descripcion}</p>
+    `;
+  }
+</script>
+<a href="menuproductos.html" class="boton-volver">⟵ Volver</a>
+  
+</body>

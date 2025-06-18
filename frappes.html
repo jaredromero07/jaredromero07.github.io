@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Frappés</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="frappes.css">
+</head>
+<body>
+
+<h2 class="titulo">Frappés</h2>
+<div class="frappe-seleccionado" id="mainfrape-deluxe"></div>
+<div class="carrusel">
+  <div class="slides" id="slides-deluxe">
+    <div class="frappe" onclick="mostrarfrape('mainfrape-deluxe','El Cafetero', 'Frappé de Cappuccino decorado con crema batida, chocolate Hershey’s líquido y chispitas de chocolate')">
+      <div class="img-container"><img src="Frappe-El-Cafetero-480x772.webp" alt="frappe"></div>
+      <h3>El Cafetero</h3>
+      <p class="precio">$49</p>
+    </div>
+    <div class="frappe" onclick="mostrarfrape('mainfrape-deluxe','El Intenso', 'Frappé de Snickers decorado con crema batida, trocitos de Snickers y chocolate Hershey’s líquido')">
+      <div class="img-container"><img src="Frappe-El-Intenso-480x754.webp" alt="frappe"></div>
+      <h3>El Intenso</h3>
+      <p class="precio">$49</p>
+    </div>
+    <div class="frappe" onclick="mostrarfrape('mainfrape-deluxe','El Jefe', 'Frappé de galleta Emperador de chocolate decorado con crema batida y trocitos de galleta')">
+      <div class="img-container"><img src="Frappe-El-Jefe-480x755 - copia.webp" alt="frappe"></div>
+      <h3>El Jefe</h3>
+      <p class="precio">$49</p>
+    </div>
+    <div class="frappe" onclick="mostrarfrape('mainfrape-deluxe','Galletano', 'Frappé de galleta Chokis decorado con crema batida, trocitos de galleta y chocolate Hershey’s líquido')">
+      <div class="img-container"><img src="Frappe-Galletano-480x740.webp" alt="frappe"></div>
+      <h3>Galletano</h3>
+      <p class="precio">$49</p>
+    </div>
+  </div>
+</div>
+<div class="flechas">
+  <button onclick="moverSlide('deluxe', -1)">⟨</button>
+  <button onclick="moverSlide('deluxe', 1)">⟩</button>
+</div>
+<div class="puntos" id="puntos-deluxe">
+  <span class="punto activo" onclick="irASlide('deluxe', 0)"></span>
+  <span class="punto" onclick="irASlide('deluxe', 1)"></span>
+  <span class="punto" onclick="irASlide('deluxe', 2)"></span>
+  <span class="punto" onclick="irASlide('deluxe', 3)"></span>
+</div>
+
+<h2 class="titulo">Malteadas</h2>
+<div class="frappe-seleccionado" id="mainfrape-prime"></div>
+<div class="carrusel">
+  <div class="slides" id="slides-prime">
+    <div class="frappe" onclick="mostrarfrape('mainfrape-prime','El Choco', 'Malteada con helado de chocolate decorada con crema batida, chocolate Hershey’s y barra Carlos V')">
+      <div class="img-container"><img src="El-Choco-480x730.webp" alt="frappe"></div>
+      <h3>El Choco</h3>
+      <p class="precio">$59</p>
+    </div>
+    <div class="frappe" onclick="mostrarfrape('mainfrape-prime','El Vanilo', 'Malteada con helado de vainilla, dulce de leche y galleta Emperador de vainilla')">
+      <div class="img-container"><img src="El-Vanilo-480x647.webp" alt="frappe"></div>
+      <h3>El Vanilo</h3>
+      <p class="precio">$59</p>
+    </div>
+    <div class="frappe" onclick="mostrarfrape('mainfrape-prime','El Crack', 'Malteada con helado de vainilla, Hershey’s y galleta Oreo')">
+      <div class="img-container"><img src="El-Crack-480x706.webp" alt="frappe"></div>
+      <h3>El Crack</h3>
+      <p class="precio">$59</p>
+    </div>
+    <div class="frappe" onclick="mostrarfrape('mainfrape-prime','La Fresa', 'Malteada con helado de fresa, Hershey’s líquido de fresa y trocitos de fresa')">
+      <div class="img-container"><img src="La-Fresa-480x681 (1).webp" alt="frappe"></div>
+      <h3>La Fresa</h3>
+      <p class="precio">$59</p>
+    </div>
+  </div>
+</div>
+<div class="flechas">
+  <button onclick="moverSlide('prime', -1)">⟨</button>
+  <button onclick="moverSlide('prime', 1)">⟩</button>
+</div>
+<div class="puntos" id="puntos-prime">
+  <span class="punto activo" onclick="irASlide('prime', 0)"></span>
+  <span class="punto" onclick="irASlide('prime', 1)"></span>
+  <span class="punto" onclick="irASlide('prime', 2)"></span>
+  <span class="punto" onclick="irASlide('prime', 3)"></span>
+</div>
+
+<script>
+  let estados = {
+    deluxe: 0,
+    prime: 0
+  };
+
+  function actualizarSlide(nombre) {
+    const slide = document.getElementById('slides-' + nombre);
+    const puntos = document.querySelectorAll('#puntos-' + nombre + ' .punto');
+    slide.style.transform = 'translateX(' + (-estados[nombre] * 100) + '%)';
+    puntos.forEach(p => p.classList.remove('activo'));
+    if (puntos[estados[nombre]]) puntos[estados[nombre]].classList.add('activo');
+  }
+
+  function moverSlide(nombre, paso) {
+    const total = document.querySelectorAll('#puntos-' + nombre + ' .punto').length;
+    estados[nombre] = (estados[nombre] + paso + total) % total;
+    actualizarSlide(nombre);
+  }
+
+  function irASlide(nombre, index) {
+    estados[nombre] = index;
+    actualizarSlide(nombre);
+  }
+
+  function mostrarfrape(id, nombre, descripcion) {
+    const main = document.getElementById(id);
+    main.innerHTML = `
+      <h3>${nombre}</h3>
+      <p>${descripcion}</p>
+    `;
+  }
+</script>
+
+<a href="menuproductos.html" class="boton-volver">⟵ Volver</a>
+
+</body>
+</html>
